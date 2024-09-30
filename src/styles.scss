@@ -1,3 +1,88 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --black: 209 63% 12%;
+    --very-dark-grey: 235, 16%, 15%;
+    --dark-grey: 235, 12%, 19%;
+    --grey: 236, 11%, 27%;
+    --medium-gray: 216 15% 57%;
+    --light-medium-grey: 221deg 95 85;
+    --light-grey: 221 69% 91%;
+    --very-light-grey: 220 69% 97%;
+    --white: 210 40% 98%;
+    --purple: 242, 48%, 58%;
+    --light-purple: 243 100% 82%;
+    --red: 4, 88%, 24%;
+    --light-coral-red: 0, 78%, 63%;
+    --green: 160, 50%, 32%;
+
+    --background: var(--light-grey);
+    --background-secondary: var(--white);
+    --foreground: var(--black);
+    --card: var(--white);
+    --card-foreground: var(--black);
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: var(--purple);
+    --primary-foreground: var(--white);
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: var(--light-medium-grey);
+    --accent-foreground: var(--black);
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: var(--light-grey);
+    --input: var(--black);
+    --ring: var(--light-purple);
+    --ring-secondary: var(--purple);
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: var(--very-dark-grey);
+    --background-secondary: var(--dark-grey);
+    --foreground: var(--white);
+    --card: var(--dark-grey);
+    --card-foreground: var(--white);
+    --popover: var(--dark-grey);
+    --popover-foreground: var(--white);
+    --primary: var(--purple);
+    --primary-foreground: var(--white);
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: var(--grey);
+    --accent-foreground: var(--white);
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: var(--grey);
+    --input: var(--white);
+    --ring: var(--very-light-grey);
+    --ring-secondary: var(--purple);
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

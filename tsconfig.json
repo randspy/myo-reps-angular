@@ -19,10 +19,10 @@
     "module": "ES2022",
     "lib": ["ES2022", "dom"],
     "paths": {
-      "@spartan-ng/ui-button-helm": [
-        "./src/components/ui-button-helm/src/index.ts"
-      ]
-    }
+      "@app/*": ["src/app/*"],
+      "@components/*": ["src/components/*"]
+    },
+    "baseUrl": "./"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

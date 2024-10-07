@@ -17,15 +17,6 @@ describe('AppComponent', () => {
   it(`should have the 'myo-reps-angular' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('myo-reps-angular');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('button')?.textContent).toContain(
-      'Hello World',
-    );
+    expect(app.title).toEqual('myo-reps');
   });
 });

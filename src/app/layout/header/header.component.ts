@@ -37,7 +37,7 @@ export class HeaderComponent {
   currentPath = toSignal(
     this.router.events.pipe(
       filter((event): event is NavigationEnd => event instanceof NavigationEnd),
-      map((event: NavigationEnd) => event.url),
+      map(() => this.router.routerState.snapshot.url),
     ),
     { initialValue: '' },
   );

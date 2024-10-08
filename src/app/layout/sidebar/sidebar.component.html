@@ -1,0 +1,26 @@
+<div
+  class="h-dvh border-r border-r-border bg-background-secondary pt-1 shadow-md"
+  data-testid="sidebar"
+>
+  <div class="mb-10 mt-5">
+    <myo-logo></myo-logo>
+  </div>
+  <ul>
+    <li *ngFor="let tab of tabs()">
+      <a
+        [routerLink]="tab.url"
+        [class.hover:bg-accent]="!isActiveTab(tab)"
+        class="my-2 block outline-none hover:opacity-90 focus-visible:shadow-outline md:-mr-4 md:ml-4"
+        (click)="onClose()"
+      >
+        <div
+          [class.bg-primary]="isActiveTab(tab)"
+          [class.text-primary-foreground]="isActiveTab(tab)"
+          class="px-4 py-3"
+        >
+          {{ tab.title }}
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

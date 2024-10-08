@@ -1,0 +1,40 @@
+<header
+  class="flex h-20 items-center border-b border-b-border bg-background-secondary p-4 md:ml-48"
+  data-testid="header"
+>
+  <div class="mr-4 md:hidden">
+    <button
+      hlm-button
+      variant="icon"
+      size="icon"
+      data-testid="sidebar-toggle"
+      (click)="openSidebar()"
+    >
+      <ng-icon name="lucideMenu" class="h-4 w-4"></ng-icon>
+    </button>
+  </div>
+
+  <h2 class="truncate text-lg md:ml-4" data-testid="title">
+    {{ activeSidebarElementPath() }}
+  </h2>
+</header>
+
+<div
+  class="fixed left-0 top-0 w-48 -translate-x-full transform transition-transform duration-300 ease-in-out md:block md:translate-x-0"
+  [class.translate-x-0]="isSidebarOpenInMobileView()"
+>
+  @if (isSidebarOpenInMobileView()) {
+    <myo-sidebar
+      (myoClickOutside)="closeSidebar()"
+      [tabs]="sideBarRoutePaths"
+      [path]="currentPath()"
+      (close)="closeSidebar()"
+    ></myo-sidebar>
+  } @else {
+    <myo-sidebar
+      [tabs]="sideBarRoutePaths"
+      [path]="currentPath()"
+      (close)="closeSidebar()"
+    ></myo-sidebar>
+  }
+</div>

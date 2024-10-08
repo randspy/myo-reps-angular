@@ -2,7 +2,6 @@ import { Component, DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ClickOutsideDirective } from './click-outside.directive';
-import { vi } from 'vitest';
 
 @Component({
   template: `
@@ -13,7 +12,7 @@ import { vi } from 'vitest';
   `,
 })
 class TestComponent {
-  onClickOutside = vi.fn();
+  onClickOutside = jest.fn();
 }
 
 describe('ClickOutsideDirective', () => {
@@ -40,7 +39,7 @@ describe('ClickOutsideDirective', () => {
   });
 
   it('should not emit when clicking inside the element', () => {
-    const emitSpy = vi.spyOn(directive.myoClickOutside, 'emit');
+    const emitSpy = jest.spyOn(directive.myoClickOutside, 'emit');
     const insideButton = directiveElement.query(By.css('button')).nativeElement;
 
     insideButton.click();
@@ -49,7 +48,7 @@ describe('ClickOutsideDirective', () => {
   });
 
   it('should emit when clicking outside the element', () => {
-    const emitSpy = vi.spyOn(directive.myoClickOutside, 'emit');
+    const emitSpy = jest.spyOn(directive.myoClickOutside, 'emit');
     const outsideButton = fixture.debugElement.query(
       By.css('#outside'),
     ).nativeElement;
